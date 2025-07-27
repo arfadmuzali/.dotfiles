@@ -1,0 +1,138 @@
+/* @defile-color background:   #282C34; */
+/* @defile-color red:         #E06C75; */
+/* @defile-color green:       #98C379; */
+/* @defile-color yellow:      #E5C07B; */
+/* @defile-color blue:        #61AFEF; */
+/* @defile-color purple:      #C678DD; */
+/* @defile-color cyan:        #56B6C2; */
+/* @defile-color gray-light:  #ABB2BF; */
+
+* {
+  font-family:
+    "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", Roboto, Arial,
+    sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+}
+
+button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
+}
+
+/*-----module groups----*/
+.modules-right {
+  /* background-color: #282C34; */
+  margin: 2px 5px 0 0;
+}
+.modules-center {
+  background-color: #282c34;
+  margin: 2px 0 0 0;
+}
+.modules-left {
+  /* background-color: #282C34; */
+  margin: 2px 0 0 5px;
+}
+
+#workspaces {
+  /* background-color: #56B6C2; */
+  background-color: #282c34;
+}
+
+#workspaces button {
+  padding: 1px 10px 0 10px;
+  transition: all 0.2s linear;
+}
+
+#workspaces button:hover {
+  background-color: #abb2bf;
+}
+
+#workspaces .special {
+  background-color: #98c379;
+}
+
+#taskbar {
+  background-color: #282c34;
+  margin-left: 4px;
+}
+#taskbar button {
+  transition: all 0.2s linear;
+}
+
+#taskbar button:hover {
+  background-color: #abb2bf;
+}
+
+#taskbar button.active {
+  background-color: #abb2bf;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#backlight,
+#mode,
+#custom-power,
+#custom-vpn,
+#idle_inhibitor {
+  background-color: #282c34;
+  padding: 1px 12px;
+  margin: 0 2px;
+}
+
+#clock {
+  padding: 1px 8px;
+}
+
+#mode {
+  color: #e06c75;
+  font-weight: bold;
+}
+#custom-power {
+  background-color: #282c34;
+  margin-left: 2px;
+  padding: 1px 5px 1px 12px;
+  transition: color 0.2s linear;
+}
+#custom-power:hover {
+  color: #e06c75;
+}
+/*-----Indicators----*/
+#idle_inhibitor.activated {
+  color: #98c379;
+}
+#pulseaudio.muted {
+  color: #e06c75;
+}
+#battery.charging {
+  color: #98c379;
+}
+#battery.warning:not(.charging) {
+  color: #e6e600;
+}
+#battery.critical:not(.charging) {
+  color: #e06c75;
+}
+#temperature.critical {
+  color: #e06c75;
+}
+#custom-vpn.connected {
+  color: #98c379;
+}
+#custom-vpn.disconnected {
+  color: inherit;
+}
