@@ -44,10 +44,11 @@ button:hover {
 #workspaces {
   /* background-color: #56B6C2; */
   background-color: #282c34;
+  border-color: #282c34;
 }
 
 #workspaces button {
-  padding: 1px 10px 0 10px;
+  padding: 0px 6px 0 6px;
   transition: all 0.2s linear;
 }
 
@@ -64,6 +65,7 @@ button:hover {
   margin-left: 4px;
 }
 #taskbar button {
+  padding: 2px 6px;
   transition: all 0.2s linear;
 }
 
