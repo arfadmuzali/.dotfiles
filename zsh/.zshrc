@@ -107,10 +107,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
+# ALIAS
 
 alias osu='~/Downloads/osu.AppImage'
 alias ps2='~/Downloads/pcsx2.AppImage'
 alias showimage="kitten icat"
+alias open='xdg-open'
 
 # FuzzyFinder Alias
 alias ff='find ~ -type f 2>/dev/null | fzf --height=40% | wl-copy'

@@ -9,6 +9,7 @@ return {
         disable_netrw = true,
         hijack_netrw = true,
         view = {
+          relativenumber = true,
           float = {
             enable = true,
             quit_on_focus_loss = true,

@@ -30,7 +30,7 @@
   "wlr/taskbar": {
     // "all-output": true,
     "format": "{icon}",
-    "icon-size": 14,
+    "icon-size": 12,
     "icon-theme": "Numix-Circle",
     "tooltip-format": "{title}",
     "on-click": "activate",
@@ -103,7 +103,7 @@
   },
 
   "memory": {
-    "interval": 30,
+    "interval": 15,
     "format": "{used}GiB ",
     "max-length": 10,
   },

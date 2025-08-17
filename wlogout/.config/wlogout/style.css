@@ -1,8 +1,13 @@
 /* @import "../../.cache/wal/colors-wlogout.css"; */
 
 * {
-  font-family: "JetBrainsMono Nerd Font", Semibold FontAwesome, Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family:
+    "JetBrainsMono Nerd Font",
+    Semibold FontAwesome,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   background-image: none;
   transition: 20ms;
 }
@@ -12,8 +17,8 @@ window {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: image(
-    url("/home/arfad/Downloads/images/wallheaven.png"),
-    url("/home/arfad/Downloads/images/wallheaven.png")
+    url("/home/arfad/Downloads/images/wallpaper/ado1.png"),
+    url("/home/arfad/Downloads/images/wallpaper/ado1.png")
   );
 }
 
@@ -34,7 +39,9 @@ button {
   /* transition: all;
   transition-duration: 200ms; */
 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba (0, 0, 0, 0);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0),
+    0 6px 20px 0 rgba (0, 0, 0, 0);
 }
 
 button:focus,
