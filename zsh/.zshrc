@@ -113,6 +113,7 @@ alias osu='~/Downloads/osu.AppImage'
 alias ps2='~/Downloads/pcsx2.AppImage'
 alias showimage="kitten icat"
 alias open='xdg-open'
+alias note='nvim ~/Obsidian\ Vault/'
 
 # FuzzyFinder Alias
 alias ff='find ~ -type f 2>/dev/null | fzf --height=40% | wl-copy'

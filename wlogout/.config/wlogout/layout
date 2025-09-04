@@ -6,13 +6,13 @@
 }
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
+    "action" : "shutdown -c && notify-send 'Shutdown canceled :('",
+    "text" : "Cancel all schedule",
+    "keybind" : "c"
 }
 {
     "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
+    "action" : "hyprctl dispatch exit",
     "text" : "Logout",
     "keybind" : "e"
 }
@@ -23,10 +23,10 @@
     "keybind" : "s"
 }
 {
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
+    "label" : "shutdown",
+    "action" : "shutdown +60 && notify-send 'Shutdown in 60 min'",
+    "text" : "Schedule in 60 min",
+    "keybind" : "a"
 }
 {
     "label" : "reboot",

@@ -81,6 +81,7 @@ vim.o.confirm = true
 
 -- Yanks configuratins
 vim.keymap.set('n', 'Y', '"+y')
+vim.keymap.set('v', 'Y', '"+y')
 -- vim.api.nvim_create_autocmd('TextYankPost', {
 --   callback = function()
 --     vim.fn.setreg('+', vim.fn.getreg '"') -- salin isi register default (") ke clipboard ("+)
