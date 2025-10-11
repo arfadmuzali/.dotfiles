@@ -10,6 +10,11 @@ if [[ ! -f "$FILE" ]]; then
 fi
 
 descriptions=$(jq -r '.[].Description' "$FILE")
+
+if [[ -z "$descriptions" ]]; then
+  exit 0
+fi
+
 while IFS= read -r desc; do
   notify-send "Todo" "$desc"
 done <<< "$descriptions"
