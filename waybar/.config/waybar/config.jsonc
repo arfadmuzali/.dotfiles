@@ -18,7 +18,7 @@
   },
 
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{id}:{icon}",
     "format-icons": {
       "active": "",
       "default": "",
@@ -28,19 +28,15 @@
   },
 
   "wlr/taskbar": {
-    // "all-output": true,
+    // "all-output": false,
     "format": "{icon}",
     "icon-size": 12,
     "icon-theme": "Numix-Circle",
-    "tooltip-format": "{title}",
     "on-click": "activate",
+    "tooltip": false,
     "on-click-middle": "close",
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition",
-    },
     "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal",
+      ".": "Terminal",
     },
   },
 
@@ -74,6 +70,7 @@
   "clock": {
     "tooltip": false,
     "format-alt": "{:%A, %B %d}",
+    "on-click-middle": "hyprctl dispatch exec gnome-calendar",
   },
 
   "pulseaudio": {

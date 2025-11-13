@@ -31,9 +31,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ───────────────────────────────────────────────
 # Oh My Zsh Plugins
 # ───────────────────────────────────────────────
-plugins=(
-  git
-)
+plugins=(git zsh-autosuggestions fast-syntax-highlighting fzf-tab)
+
 source $ZSH/oh-my-zsh.sh
 
 # ───────────────────────────────────────────────
@@ -48,26 +47,25 @@ alias ls='eza --group-directories-first --color=auto'
 # ───────────────────────────────────────────────
 # Fuzzy Finder Helpers
 # ───────────────────────────────────────────────
-alias ff='find ~ -type f 2>/dev/null | fzf --height=40% | wl-copy'
-
+# alias ff='find ~ -type f 2>/dev/null | fzf --height=40% | wl-copy'
 fcode() {
   local query="$1"
   local dir
-  dir=$(find ~ -type d 2>/dev/null | fzf --height=40% --query="$query")
+  dir=$(fd . ~/projects ~/.dotfiles ~/learn --type d --hidden | fzf --height=40% --query="$query")
   [ -n "$dir" ] && code "$dir"
 }
 
 fn() {
   local query="$1"
   local dir
-  dir=$(find ~ -type d 2>/dev/null | fzf --height=40% --query="$query")
+  dir=$(fd . ~/projects ~/.dotfiles ~/learn --type d --hidden --max-depth 3| fzf --height=70% --query="$query")
   [ -n "$dir" ] && nvim "$dir"
 }
 
-fd() {
+ff() {
   local query="$1"
   local dir
-  dir=$(find ~ -type d 2>/dev/null | fzf --height=40% --query="$query")
+  dir=$(fd . ~/projects ~/.dotfiles ~/learn --type d --hidden | fzf --height=70% --query="$query")
   [ -n "$dir" ] && cd "$dir"
 }
 
@@ -77,27 +75,4 @@ fd() {
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export ARCHFLAGS="-arch $(uname -m)"
-
-# ───────────────────────────────────────────────
-# Zinit Plugin Manager
-# ───────────────────────────────────────────────
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-	print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Zinit…%f"
-	command mkdir -p "$HOME/.local/share/zinit"
-	command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" \
-		&& print -P "%F{33}%F{34}Installation successful.%f%b" \
-		|| print -P "%F{160}The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-
-  # Load Plugins
-  zinit light zsh-users/zsh-autosuggestions
-  zinit light zsh-users/zsh-syntax-highlighting
-  zinit light zsh-users/zsh-completions
-  zinit light Aloxaf/fzf-tab
-
-  autoload -Uz compinit && compinit
-  autoload -Uz _zinit
-  (( ${+_comps} )) && _comps[zinit]=_zinit
 

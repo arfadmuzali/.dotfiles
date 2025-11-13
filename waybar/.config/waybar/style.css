@@ -1,11 +1,11 @@
-/* @defile-color background:   #282C34; */
-/* @defile-color red:         #E06C75; */
-/* @defile-color green:       #98C379; */
-/* @defile-color yellow:      #E5C07B; */
-/* @defile-color blue:        #61AFEF; */
-/* @defile-color purple:      #C678DD; */
-/* @defile-color cyan:        #56B6C2; */
-/* @defile-color gray-light:  #ABB2BF; */
+@define-color background   #282C34;
+@define-color red         #E06C75;
+@define-color green       #98C379;
+@define-color yellow      #E5C07B;
+@define-color blue        #61AFEF;
+@define-color purple      #C678DD;
+@define-color cyan        #56B6C2;
+@define-color gray-light  #ABB2BF;
 
 * {
   font-family:
@@ -29,7 +29,6 @@ button:hover {
 
 /*-----module groups----*/
 .modules-right {
-  /* background-color: #282C34; */
   margin: 2px 4px 0 0;
 }
 .modules-center {

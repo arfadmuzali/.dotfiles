@@ -1,36 +1,30 @@
 {
     "label" : "lock",
     "action" : "swaylock",
-    "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
     "action" : "shutdown -c && notify-send 'Shutdown canceled :('",
-    "text" : "Cancel all schedule",
     "keybind" : "c"
 }
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit",
-    "text" : "Logout",
+    "action" : "loginctl terminate-user $USER",
     "keybind" : "e"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Shutdown",
     "keybind" : "s"
 }
 {
-    "label" : "shutdown",
+    "label" : "suspend",
     "action" : "shutdown +60 && notify-send 'Shutdown in 60 min'",
-    "text" : "Schedule in 60 min",
-    "keybind" : "a"
+    "keybind" : "u"
 }
 {
     "label" : "reboot",
     "action" : "systemctl reboot",
-    "text" : "Reboot",
     "keybind" : "r"
 }
