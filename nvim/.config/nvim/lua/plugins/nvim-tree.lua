@@ -9,7 +9,7 @@ return {
                 disable_netrw = true,
                 hijack_netrw = true,
                 view = {
-                    relativenumber = true,
+                    relativenumber = false,
                     float = {
                         enable = true,
                         quit_on_focus_loss = true,
@@ -25,7 +25,6 @@ return {
 
                             return {
                                 border = 'rounded', -- or "single", "double", "none"
-                                relative = 'editor',
                                 row = center_y,
                                 col = center_x,
                                 width = window_w_int,
@@ -51,7 +50,7 @@ return {
                     },
                 },
                 filters = {
-                    dotfiles = false,
+                    dotfiles = true,
                 },
                 git = {
                     enable = true,
@@ -77,38 +76,6 @@ return {
                     vim.keymap.set('n', '<Esc><Esc>', ':NvimTreeToggle<CR>', opts)
                 end,
             })
-
-            local colors = require('onedark.colors')
-            vim.cmd(
-                string.format(
-                    [[
-	highlight FloatBorder  guibg=%s guifg=%s
-	highlight NvimTreeNormalFloat  guibg=%s
-        highlight NvimTreeNormal       guibg=%s
-        highlight NvimTreeVertSplit    guibg=%s guifg=%s
-        highlight NvimTreeEndOfBuffer  guibg=%s
-        highlight NvimTreeRootFolder   guifg=%s gui=bold
-        highlight NvimTreeFolderName   guifg=%s
-        highlight NvimTreeOpenedFolderName guifg=%s gui=italic
-        highlight NvimTreeGitDirty     guifg=%s
-        highlight NvimTreeGitNew       guifg=%s
-        highlight NvimTreeGitDeleted   guifg=%s
-      ]],
-                    colors.bg0,
-                    colors.grey,
-                    colors.bg0,
-                    colors.bg0,
-                    colors.bg0,
-                    colors.grey,
-                    colors.bg0,
-                    colors.blue,
-                    colors.fg,
-                    colors.blue,
-                    colors.yellow,
-                    colors.green,
-                    colors.red
-                )
-            )
         end,
     },
 }
