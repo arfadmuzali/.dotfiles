@@ -331,11 +331,14 @@ require('lazy').setup({
             require('telescope').setup({
                 -- You can put your default mappings / updates / etc. in here
                 --  All the info you're looking for is in `:help telescope.setup()`
-                --
                 defaults = {
                     file_ignore_patterns = { 'node_modules', '%.git/', 'dist', 'build' },
                     mappings = {
-                        i = { ['<C-d>'] = require('telescope.actions').delete_buffer },
+                        i = {
+                            ['<C-d>'] = require('telescope.actions').delete_buffer,
+                            ['<C-j>'] = require('telescope.actions').move_selection_previous,
+                            ['<C-k>'] = require('telescope.actions').move_selection_next,
+                        },
                         n = { ['<C-d>'] = require('telescope.actions').delete_buffer },
                     },
                 },
@@ -353,6 +356,7 @@ require('lazy').setup({
 
             -- See `:help telescope.builtin`
             local builtin = require('telescope.builtin')
+
             vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
             vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
             vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
