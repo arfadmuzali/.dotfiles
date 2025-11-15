@@ -32,6 +32,9 @@ vim.o.showmode = false
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Set W to stop_after_first
+-- vim.cmd()
+
 -- Save undo history
 vim.o.undofile = true
 vim.keymap.set('n', '<leader>u', ':Atone toggle<CR>', { desc = 'Toggle undotree', noremap = true, silent = true })
@@ -86,6 +89,9 @@ vim.keymap.set('v', 'Y', '"+y')
 --     vim.fn.setreg('+', vim.fn.getreg '"') -- salin isi register default (") ke clipboard ("+)
 --   end,
 -- })
+
+-- Save Configuration
+vim.api.nvim_create_user_command('W', 'w', {})
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
