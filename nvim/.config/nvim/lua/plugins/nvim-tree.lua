@@ -9,7 +9,7 @@ return {
                 disable_netrw = true,
                 hijack_netrw = true,
                 view = {
-                    relativenumber = false,
+                    relativenumber = true,
                     float = {
                         enable = true,
                         quit_on_focus_loss = true,
@@ -25,6 +25,7 @@ return {
 
                             return {
                                 border = 'rounded', -- or "single", "double", "none"
+                                relative = 'editor',
                                 row = center_y,
                                 col = center_x,
                                 width = window_w_int,
@@ -50,7 +51,7 @@ return {
                     },
                 },
                 filters = {
-                    dotfiles = true,
+                    dotfiles = false,
                 },
                 git = {
                     enable = true,
@@ -76,6 +77,9 @@ return {
                     vim.keymap.set('n', '<Esc><Esc>', ':NvimTreeToggle<CR>', opts)
                 end,
             })
+            vim.api.nvim_set_hl(0, 'NvimTreeNormalFloat', { link = 'Normal' })
+            vim.api.nvim_set_hl(0, 'NvimTreeNormalFloatBorder', { link = 'TelescopeBorder' })
+            -- vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = '#555555', bg = 'NONE' })
         end,
     },
 }
