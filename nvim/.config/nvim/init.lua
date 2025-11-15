@@ -34,6 +34,7 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.keymap.set('n', '<leader>u', ':Atone toggle<CR>', { desc = 'Toggle undotree', noremap = true, silent = true })
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -358,11 +359,16 @@ require('lazy').setup({
             vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch buffers' })
             vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find Buffer' })
 
+            -- Telescope Color
+            vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })
+            vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = '#555555', bg = 'NONE' })
+            vim.api.nvim_set_hl(0, 'TelescopeTitle', { fg = '#89b4fa' })
+
             -- Slightly advanced example of overriding default behavior and theme
             vim.keymap.set('n', '<leader>/', function()
                 -- You can pass additional configuration to Telescope to change the theme, layout, etc.
                 builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
-                    winblend = 10,
+                    -- winblend = 10,
                     previewer = false,
                 }))
             end, { desc = '[/] Fuzzily search in current buffer' })
@@ -409,11 +415,13 @@ require('lazy').setup({
             local cmp = require('cmp')
             local luasnip = require('luasnip')
 
-            cmp.config.formatting = {
-                format = require('tailwindcss-colorizer-cmp').formatter,
-            }
-
             cmp.setup({
+                -- Border for autocompletion
+                window = {
+                    -- completion = cmp.config.window.bordered(),
+                    -- documentation = cmp.config.window.bordered(),
+                },
+                formatting = { format = require('tailwindcss-colorizer-cmp').formatter },
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
@@ -766,29 +774,29 @@ require('lazy').setup({
             -- Simple and easy statusline.
             --  You could remove this setup call if you don't like it,
             --  and try some other statusline plugin
-            local statusline = require('mini.statusline')
+            -- local statusline = require('mini.statusline')
             -- set use_icons to true if you have a Nerd Font
-            statusline.setup({ use_icons = vim.g.have_nerd_font })
+            -- statusline.setup({ use_icons = vim.g.have_nerd_font })
 
             -- You can configure sections in the statusline by overriding their
             -- default behavior. For example, here we set the section for
             -- cursor location to LINE:COLUMN
             ---@diagnostic disable-next-line: duplicate-set-field
-            statusline.section_location = function()
-                return '%l/%L'
-            end
+            -- statusline.section_location = function()
+            -- return '%l/%L'
+            -- end
 
-            statusline.section_filename = function()
-                local filename = vim.fn.expand('%:t')
-                if filename == '' then
-                    filename = '[No Name]'
-                end
-                vim.api.nvim_set_hl(0, 'MiniStatuslineFilename', { fg = '#ffffff', bg = 'NONE', bold = true })
-
-                local modified = vim.bo.modified and ' ●' or ''
-                local readonly = vim.bo.readonly and ' 🔒' or ''
-                return filename .. modified .. readonly
-            end
+            -- statusline.section_filename = function()
+            --     local filename = vim.fn.expand('%:t')
+            --     if filename == '' then
+            --         filename = '[No Name]'
+            --     end
+            --     vim.api.nvim_set_hl(0, 'MiniStatuslineFilename', { fg = '#ffffff', bg = '#282c34', bold = false })
+            --
+            --     local modified = vim.bo.modified and ' ●' or ''
+            --     local readonly = vim.bo.readonly and ' 🔒' or ''
+            --     return filename .. modified .. readonly
+            -- end
 
             -- ... and there is more!
             --  Check out: https://github.com/echasnovski/mini.nvim
