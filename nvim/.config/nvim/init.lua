@@ -71,10 +71,14 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 15
+
+-- Keymap for modifying buffer
+vim.keymap.set('n', '<leader>d', ':%bd | NvimTreeToggle<CR>', { desc = 'Close all buffer' })
+vim.keymap.set('n', '<leader>r', ':bufdo e<CR>', { desc = 'Reload all buffer' })
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -288,6 +292,7 @@ require('lazy').setup({
         event = 'VimEnter',
         dependencies = {
             'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-media-files.nvim',
             { -- if encountering errors, see telescope-fzf-native readme for installation instructions
                 'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -336,16 +341,21 @@ require('lazy').setup({
                     mappings = {
                         i = {
                             ['<C-d>'] = require('telescope.actions').delete_buffer,
-                            ['<C-j>'] = require('telescope.actions').move_selection_previous,
-                            ['<C-k>'] = require('telescope.actions').move_selection_next,
+                            ['<C-k>'] = require('telescope.actions').move_selection_previous,
+                            ['<C-j>'] = require('telescope.actions').move_selection_next,
                         },
                         n = { ['<C-d>'] = require('telescope.actions').delete_buffer },
                     },
                 },
+                -- Telescope preview
                 -- pickers = {}
                 extensions = {
                     ['ui-select'] = {
                         require('telescope.themes').get_dropdown(),
+                    },
+                    media_files = {
+                        filetypes = { 'png', 'jpg', 'jpeg', 'webp', 'gif' },
+                        find_cmd = 'rg',
                     },
                 },
             })
@@ -353,6 +363,7 @@ require('lazy').setup({
             -- Enable Telescope extensions if they are installed
             pcall(require('telescope').load_extension, 'fzf')
             pcall(require('telescope').load_extension, 'ui-select')
+            pcall(require('telescope').load_extension, 'media_files')
 
             -- See `:help telescope.builtin`
             local builtin = require('telescope.builtin')
