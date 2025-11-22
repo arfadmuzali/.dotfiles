@@ -79,7 +79,6 @@ return {
             })
             vim.api.nvim_set_hl(0, 'NvimTreeNormalFloat', { link = 'Normal' })
             vim.api.nvim_set_hl(0, 'NvimTreeNormalFloatBorder', { link = 'TelescopeBorder' })
-            -- vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = '#555555', bg = 'NONE' })
         end,
     },
 }
