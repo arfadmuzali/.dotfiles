@@ -6,7 +6,8 @@
 @define-color purple      #957FB8;
 @define-color cyan        #7AA89F;
 @define-color gray-light  #717C7C;
-@define-color white #DCD7BA;
+@define-color white #dcd7ba;
+
 * {
   font-family:
     "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", Roboto, Arial,

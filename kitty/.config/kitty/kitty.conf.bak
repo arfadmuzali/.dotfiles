@@ -9,6 +9,6 @@ allow_remote_control yes
 listen_on unix:/tmp/mykitty
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Kanagawa_dragon
 include current-theme.conf
 # END_KITTY_THEME
