@@ -13,9 +13,15 @@ vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.o.number = true
 vim.o.ruler = true
+
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 vim.o.relativenumber = true
+
+-- Wrap text setting
+vim.o.wrap = false
+vim.keymap.set('n', 'zh', '10zh')
+vim.keymap.set('n', 'zl', '10zl')
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'

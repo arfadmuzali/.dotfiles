@@ -12,8 +12,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 
 export ZSH="$HOME/.oh-my-zsh"
-export NNN_PLUG='p:preview-tui'
-export NNN_FIFO="/tmp/nnn.fifo"
 
 # Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
