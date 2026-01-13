@@ -2,6 +2,7 @@
   "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
   "modules-center": ["clock"],
   "modules-right": [
+    "keyboard-state",
     "network",
     "custom/vpn",
     "pulseaudio",
@@ -13,8 +14,15 @@
 
   "keyboard-state": {
     "capslock": true,
-    "format-capslock": "🅰 CAPS",
-    "format-capslock-off": "",
+    "format": {
+      "capslock": "{icon}",
+    },
+
+    "format-icons": {
+      "locked": "CAPS",
+      "unlocked": "",
+    },
+    "device-path": "/dev/input/by-path/pci-0000:00:14.0-usb-0:4:1.0-event-kbd",
   },
 
   "hyprland/workspaces": {

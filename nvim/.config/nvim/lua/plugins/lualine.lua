@@ -37,7 +37,7 @@ return {
                 },
                 inactive_sections = {
                     lualine_a = {},
-                    lualine_b = {},
+                    lualine_b = { { 'branch', icon = '' }, 'diagnostics' },
                     lualine_c = { 'filename' },
                     lualine_x = { 'location' },
                     lualine_y = {},

@@ -41,7 +41,7 @@ alias ps2="~/Downloads/pcsx2.AppImage"
 alias showimage="kitten icat"
 alias open="xdg-open"
 alias ls='eza --group-directories-first --color=auto'
-
+eval $(thefuck --alias) 
 # ───────────────────────────────────────────────
 # Fuzzy Finder Helpers
 # ───────────────────────────────────────────────
@@ -74,3 +74,5 @@ export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export ARCHFLAGS="-arch $(uname -m)"
 
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

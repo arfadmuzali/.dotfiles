@@ -10,8 +10,8 @@
 
 * {
   font-family:
-    "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", Roboto, Arial,
-    sans-serif;
+    "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP",
+    "Font Awesome 7 Brands", "Font Awesome 7 Free", Roboto, Arial, sans-serif;
   font-size: 13px;
   color: @white;
   border-radius: 6px;
@@ -85,9 +85,11 @@ button:hover {
 #backlight,
 #mode,
 #custom-power,
+#keyboard-state label.locked,
 #custom-vpn,
 #idle_inhibitor {
   background-color: @background;
+
   padding: 1px 8px;
   margin: 0 2px;
 }
