@@ -10,6 +10,7 @@ fi
 # ───────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.spicetify"
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -76,3 +77,5 @@ export ARCHFLAGS="-arch $(uname -m)"
 
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH=$PATH:/home/arfad/.spicetify
