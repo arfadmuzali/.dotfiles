@@ -4,7 +4,7 @@
   "modules-right": [
     "keyboard-state",
     "network",
-    "custom/vpn",
+    // "custom/vpn",
     "pulseaudio",
     "backlight",
     "memory",
@@ -32,6 +32,9 @@
       "default": "",
       "empty": "",
     },
+    "format-ids": {
+      "69": "",
+    },
     "show-special": true,
   },
 
@@ -48,13 +51,13 @@
     },
   },
 
-  "custom/vpn": {
-    "exec": "~/.config/waybar/scripts/vpn-status.sh",
-    "interval": 5,
-    "return-type": "json",
-    "on-click": "~/.config/waybar/scripts/toogle-vpn.sh",
-    "tooltip": "{tooltip}",
-  },
+  // "custom/vpn": {
+  //   "exec": "~/.config/waybar/scripts/vpn-status.sh",
+  //   "interval": 5,
+  //   "return-type": "json",
+  //   "on-click": "~/.config/waybar/scripts/toogle-vpn.sh",
+  //   "tooltip": "{tooltip}",
+  // },
 
   "network": {
     "interval": 2,
@@ -146,6 +149,6 @@
   "custom/power": {
     "tooltip": false,
     "format": " ",
-    "on-click": "wlogout",
+    "on-click": "wlogout -b 6 -R 50 -L 50 -T 200 -B 200",
   },
 }

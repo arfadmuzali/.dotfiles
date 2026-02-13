@@ -1,56 +1,71 @@
 * {
   background-image: none;
   box-shadow: none;
+  font-size: 12px;
 }
 
 window {
-  background-color: rgba(12, 12, 12, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 button {
   border-radius: 0;
-  border-color: black;
   text-decoration-color: #ffffff;
-  color: #ffffff;
-  background-color: #1a1c21;
+  box-shadow: none;
+  text-shadow: none;
+  color: #dcd7ba;
+  background-color: rgba(31, 31, 40, 0.95);
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
+  min-width: 150px;
+  background-size: 25%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 25%;
 }
 
 button:hover {
-  background-color: rgba(66, 66, 66, 0.2);
+  background-color: transparent;
   outline-style: none;
 }
 
 #lock {
-  background-image: image(
-    url("/home/arfad/.config/wlogout/icons/lock_white.png")
-  );
+  background-image: image(url("/home/arfad/.config/wlogout/icons/lock.png"));
+  border-radius: 0px 0px 0px 0px;
 }
 
 #logout {
   background-image: image(url("/home/arfad/.config/wlogout/icons/logout.png"));
+  border-radius: 0px 0px 0px 0px;
 }
 
-#suspend {
-  background-image: image(url("/home/arfad/.config/wlogout/icons/suspend.png"));
-}
-
-#hibernate {
+#schedule {
   background-image: image(
-    url("/home/arfad/.config/wlogout/icons/hibernate_white.png")
+    url("/home/arfad/.config/wlogout/icons/suspend.png")
+      /* url("/usr/share/wlogout/icons/suspend.png"), */
   );
+  border-radius: 0px 10px 10px 0px;
 }
 
 #shutdown {
   background-image: image(
-    url("/home/arfad/.config/wlogout/icons/shutdown_white.png")
+    /* url("/usr/share/wlogout/icons/shutdown.png"), */
+    url("/home/arfad/.config/wlogout/icons/shutdown.png")
   );
+  border-radius: 10px 0px 0px 10px;
+}
+
+#hibernate {
+  background-image: image(
+    /* url("/usr/share/wlogout/icons/hibernate.png"), */
+    url("/home/arfad/.config/wlogout/icons/hibernate.png")
+  );
+  border-radius: 0px 0px 0px 0px;
 }
 
 #reboot {
-  background-image: image(url("/home/arfad/.config/wlogout/icons/reboot.png"));
+  background-image: image(
+    /* url("/usr/share/wlogout/icons/reboot.png"), */
+    url("/home/arfad/.config/wlogout/icons/reboot.png")
+  );
+  border-radius: 0px 0px 0px 0px;
 }
