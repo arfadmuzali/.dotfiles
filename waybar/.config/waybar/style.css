@@ -14,12 +14,12 @@
     "Font Awesome 7 Brands", "Font Awesome 7 Free", Roboto, Arial, sans-serif;
   font-size: 13px;
   color: @white;
-  border-radius: 6px;
+  border-radius: 0px;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0);
-  /* background: @background; */
+  /* background: rgba(0, 0, 0, 0); */
+  background: @background;
 }
 
 button:hover {
@@ -31,7 +31,7 @@ button:hover {
 
 /*-----module groups----*/
 .modules-right {
-  margin: 2px 4px 0 0;
+  margin: 2px 0px 0 0;
 }
 .modules-center {
   background-color: @background;
@@ -39,7 +39,7 @@ button:hover {
 }
 .modules-left {
   /* background-color: #282C34; */
-  margin: 2px 0 0 4px;
+  margin: 2px 0 0 0px;
 }
 
 #workspaces {
