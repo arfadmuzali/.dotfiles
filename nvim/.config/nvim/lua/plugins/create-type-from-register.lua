@@ -12,15 +12,14 @@ local function quickType(lang)
         vim.notify(table.concat(output, '\n'), vim.log.levels.ERROR)
         return
     end
-    local row = vim.api.nvim_win_get_cursor(0)[1]
-    vim.api.nvim_buf_set_lines(0, row, row, false, output)
+    vim.api.nvim_buf_set_lines(0, vim.fn.line('.'), vim.fn.line('.'), false, output)
 end
 
 vim.keymap.set('n', '<leader>pc', function()
     local currentFiletype = vim.bo.filetype
 
     if currentFiletype == 'go' then
-        currentFileType = 'golang'
+        currentFiletype = 'golang'
     end
 
     quickType(currentFiletype)
