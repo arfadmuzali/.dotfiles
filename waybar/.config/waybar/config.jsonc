@@ -108,6 +108,8 @@
     "format": "{percent}% {icon}",
     "format-icons": ["", ""],
     "min-brightness": 0.1,
+    "on-scroll-down": "brightnessctl -e4 -n2 set 2%-",
+    "on-scroll-up": "brightnessctl -e4 -n2 set 2%+",
   },
 
   "memory": {
@@ -143,6 +145,9 @@
     "format-normal": "{capacity}% {icon}",
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""],
+    "events": {
+      "on-discharging-warning": "notify-send -i /usr/share/icons/Adwaita/symbolic/legacy/battery-empty-symbolic.svg 'Battery is in danger!'",
+    },
     "max-length": 25,
   },
 
