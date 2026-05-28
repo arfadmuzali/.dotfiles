@@ -10,7 +10,7 @@ fi
 # ───────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.spicetify"
+# export PATH="$PATH:$HOME/.spicetify"
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -42,7 +42,10 @@ alias ps2="~/Downloads/pcsx2.AppImage"
 alias showimage="kitten icat"
 alias open="xdg-open"
 alias ls='eza --group-directories-first --color=auto'
-eval $(thefuck --alias) 
+alias aria="aria2c"
+alias sunset="hyprsunset -g 80 -t 4700"
+alias signalis="WINEPREFIX=~/Games/Signalis PROTONPATH=/home/arfad/Games/proton-cachyos-11.0-20260506-slr-x86_64 umu-run /home/arfad/Downloads/games/Signalis.v1.2.2/game/SIGNALIS.exe"
+# eval $(thefuck --alias) 
 # ───────────────────────────────────────────────
 # Fuzzy Finder Helpers
 # ───────────────────────────────────────────────
@@ -75,7 +78,9 @@ export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export ARCHFLAGS="-arch $(uname -m)"
 
+export ZSH_HIGHLIGHT_MAXLENGTH=50
+
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-export PATH=$PATH:/home/arfad/.spicetify
+# export PATH=$PATH:/home/arfad/.spicetify
